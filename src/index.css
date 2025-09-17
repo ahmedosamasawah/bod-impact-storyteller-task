@@ -1,0 +1,414 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 20% 12%;
+
+    --primary: 25 95% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 25 95% 50%;
+    --primary-light: 25 85% 95%;
+
+    --success: 45 90% 65%;
+    --success-foreground: 30 20% 15%;
+    --success-light: 45 85% 95%;
+
+    --warning: 35 90% 55%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 35 85% 95%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --destructive-light: 0 70% 95%;
+
+    --secondary: 210 15% 96%;
+    --secondary-foreground: 210 20% 25%;
+    --muted: 210 12% 97%;
+    --muted-foreground: 210 15% 45%;
+    --accent: 210 15% 94%;
+    --accent-foreground: 210 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 20% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 20% 12%;
+    --border: 210 20% 92%;
+    --input: 210 20% 92%;
+    --ring: 25 95% 55%;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(25, 95%, 55%),
+      hsl(25, 95%, 65%)
+    );
+    --gradient-success: linear-gradient(
+      135deg,
+      hsl(45, 90%, 65%),
+      hsl(45, 90%, 75%)
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(25, 95%, 55%) 0%,
+      hsl(35, 90%, 60%) 50%,
+      hsl(45, 90%, 65%) 100%
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      hsl(210, 15%, 99%),
+      hsl(210, 15%, 97%)
+    );
+
+    --shadow-sm: 0 1px 2px 0 hsl(210 20% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(210 20% 20% / 0.1),
+      0 2px 4px -1px hsl(210 20% 20% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(210 20% 20% / 0.1),
+      0 4px 6px -2px hsl(210 20% 20% / 0.05);
+    --shadow-elevated: 0 20px 25px -5px hsl(210 20% 20% / 0.1),
+      0 10px 10px -5px hsl(210 20% 20% / 0.04);
+
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+
+    --sidebar-background: 210 20% 99%;
+    --sidebar-foreground: 210 20% 25%;
+    --sidebar-primary: 25 95% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 85% 95%;
+    --sidebar-accent-foreground: 30 20% 20%;
+    --sidebar-border: 30 20% 92%;
+    --sidebar-ring: 25 95% 55%;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 25% 8%;
+    --foreground: 210 15% 95%;
+
+    --primary: 25 95% 65%;
+    --primary-foreground: 210 25% 8%;
+    --primary-hover: 25 95% 70%;
+    --primary-light: 25 85% 15%;
+
+    --success: 45 90% 75%;
+    --success-foreground: 210 25% 8%;
+    --success-light: 45 85% 12%;
+
+    --warning: 35 90% 65%;
+    --warning-foreground: 210 25% 8%;
+    --warning-light: 35 85% 12%;
+
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 210 25% 8%;
+    --destructive-light: 0 70% 12%;
+
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 210 15% 80%;
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 210 20% 18%;
+    --accent-foreground: 210 15% 90%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 15% 95%;
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 15% 95%;
+    --border: 210 20% 20%;
+    --input: 210 20% 20%;
+    --ring: 25 95% 65%;
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(25, 95%, 65%),
+      hsl(25, 95%, 75%)
+    );
+    --gradient-success: linear-gradient(
+      135deg,
+      hsl(45, 90%, 75%),
+      hsl(45, 90%, 85%)
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(25, 95%, 65%) 0%,
+      hsl(35, 90%, 70%) 50%,
+      hsl(45, 90%, 75%) 100%
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      hsl(210, 25%, 9%),
+      hsl(210, 25%, 11%)
+    );
+
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.15);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.2),
+      0 2px 4px -1px hsl(0 0% 0% / 0.12);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.2),
+      0 4px 6px -2px hsl(0 0% 0% / 0.12);
+    --shadow-elevated: 0 20px 25px -5px hsl(0 0% 0% / 0.25),
+      0 10px 10px -5px hsl(0 0% 0% / 0.15);
+
+    --sidebar-background: 210 25% 6%;
+    --sidebar-foreground: 210 15% 80%;
+    --sidebar-primary: 25 95% 65%;
+    --sidebar-primary-foreground: 210 25% 6%;
+    --sidebar-accent: 45 85% 12%;
+    --sidebar-accent-foreground: 210 15% 90%;
+    --sidebar-border: 30 20% 18%;
+    --sidebar-ring: 25 95% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", "Cairo", "Tajawal", "Noto Sans Arabic", -apple-system,
+      BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    direction: rtl;
+    text-align: right;
+  }
+
+  [lang="ar"],
+  .arabic {
+    font-family: "Cairo", "Tajawal", "Noto Sans Arabic", "Amiri", serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+  }
+
+  .ltr {
+    direction: ltr;
+    text-align: left;
+  }
+
+  .numbers,
+  .code {
+    font-family: "Inter", "SF Mono", "Monaco", "Cascadia Code", monospace;
+    direction: ltr;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-3xl lg:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl lg:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl lg:text-2xl;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply bg-gradient-to-r from-primary to-success text-primary-foreground 
+           hover:opacity-90 shadow-lg hover:shadow-xl 
+           transition-all duration-300 font-medium
+           border border-primary/20;
+  }
+
+  .btn-bod-primary {
+    @apply bg-primary text-primary-foreground 
+           hover:bg-primary-hover shadow-md hover:shadow-lg
+           transition-all duration-200 font-medium
+           border border-primary/20;
+  }
+
+  .btn-bod-secondary {
+    @apply bg-gradient-to-r from-success/10 to-primary/10 
+           text-primary border border-primary/30
+           hover:from-success/20 hover:to-primary/20
+           transition-all duration-200 font-medium;
+  }
+
+  .btn-glass {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 
+           text-foreground hover:bg-white/20 
+           transition-all duration-300;
+  }
+
+  .card-elevated {
+    @apply bg-card border border-border rounded-lg 
+           shadow-md hover:shadow-lg 
+           transition-all duration-300
+           hover:border-primary/20;
+  }
+
+  .card-gradient {
+    @apply bg-gradient-to-br from-card to-secondary/30 
+           border border-border rounded-lg shadow-sm
+           hover:shadow-md transition-shadow duration-300;
+  }
+
+  .card-bod-primary {
+    @apply bg-gradient-to-br from-primary/5 to-success/5 
+           border border-primary/20 rounded-lg 
+           shadow-sm hover:shadow-md
+           transition-all duration-300;
+  }
+
+  .card-bod-feature {
+    @apply bg-card border-2 border-primary/10 rounded-xl
+           shadow-lg hover:shadow-xl hover:border-primary/30
+           transition-all duration-300 overflow-hidden;
+  }
+
+  .badge-success {
+    @apply bg-success-light text-success border border-success/20
+           font-medium text-xs px-2.5 py-1 rounded-full;
+  }
+
+  .badge-warning {
+    @apply bg-warning-light text-warning border border-warning/20
+           font-medium text-xs px-2.5 py-1 rounded-full;
+  }
+
+  .badge-error {
+    @apply bg-destructive-light text-destructive border border-destructive/20
+           font-medium text-xs px-2.5 py-1 rounded-full;
+  }
+
+  .badge-bod-primary {
+    @apply bg-primary/10 text-primary border border-primary/30
+           font-medium text-xs px-2.5 py-1 rounded-full;
+  }
+
+  .badge-bod-completed {
+    @apply bg-green-100 text-green-800 border border-green-300
+           font-medium text-xs px-2.5 py-1 rounded-full;
+    background-color: rgb(220 252 231) !important;
+    color: rgb(22 101 52) !important;
+    border-color: rgb(134 239 172) !important;
+  }
+
+  .badge-bod-progress {
+    @apply bg-blue-100 text-blue-800 border border-blue-300
+           font-medium text-xs px-2.5 py-1 rounded-full;
+    background-color: rgb(219 234 254) !important;
+    color: rgb(30 64 175) !important;
+    border-color: rgb(147 197 253) !important;
+  }
+
+  .badge-bod-planning {
+    @apply bg-yellow-100 text-yellow-800 border border-yellow-300
+           font-medium text-xs px-2.5 py-1 rounded-full;
+    background-color: rgb(254 249 195) !important;
+    color: rgb(133 77 14) !important;
+    border-color: rgb(253 224 71) !important;
+  }
+
+  .bod-heading {
+    @apply font-bold text-foreground/90 tracking-tight;
+    font-family: "Cairo", "Tajawal", sans-serif;
+  }
+
+  .bod-title {
+    @apply text-lg font-semibold text-foreground/80 mb-2;
+    font-family: "Cairo", "Tajawal", sans-serif;
+  }
+
+  .bod-subtitle {
+    @apply text-sm text-muted-foreground leading-relaxed;
+    font-family: "Cairo", "Tajawal", sans-serif;
+  }
+
+  .bod-metric {
+    @apply text-2xl font-bold text-primary tabular-nums;
+  }
+
+  .bod-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .bod-section {
+    @apply py-8 sm:py-12;
+  }
+
+  .bod-grid-cards {
+    @apply grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-200 hover:-translate-y-0.5;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-success bg-clip-text text-transparent;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.recharts-yAxis {
+  display: none !important;
+}
+
+.recharts-default-legend {
+  direction: ltr;
+}
+
+.recharts-legend-item {
+  margin-right: 30px !important;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
